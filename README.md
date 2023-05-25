@@ -5,15 +5,18 @@ Redis study with Java, Spring boot
 - helloredis
   - RedisTemplate 기본 사용법
 - SessionStore
-  - 세션 스토어
+  - Redis 세션 스토어
   - HttpSession + Redis 사용
 - RedisCaching
-  - 캐싱
+  - Redis 캐싱
   - Redis, Cache-Aside(Lazy Loading) Pattern
   - RedisCacheManager 기본 사용법
 - LeaderBoard
-  - 미들웨어
-  - Redis, Stored Set Data Type 이용한 Ranking Service
+  - Redis 미들웨어
+  - Redis, Stored Set Data Type 이용한 랭킹 서비스
+- PubSubChat
+  - Redis Pub/Sub
+  - Command line 으로 동작되는 실시간 채팅 서비스
   
 ## Dependency
 - Java 17
