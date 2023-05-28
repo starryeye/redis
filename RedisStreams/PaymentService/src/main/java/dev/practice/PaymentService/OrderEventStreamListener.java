@@ -13,6 +13,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Redis Streams Message Listener
+ *
+ * OrderService 에서 발행한 order-events 메시지 처리
+ * - payment-events 메시지 발행
  */
 @Slf4j
 @Component

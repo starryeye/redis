@@ -9,6 +9,8 @@ import java.util.Map;
 
 /**
  * Redis Streams Message Listener
+ *
+ * OrderService 에서 발행한 order-events 메시지 처리
  */
 @Slf4j
 @Component
