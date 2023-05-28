@@ -17,6 +17,17 @@ Redis study with Java, Spring boot
 - PubSubChat
   - Redis Pub/Sub
   - Command line 으로 동작되는 실시간 채팅 서비스
+- HelloSentinel
+  - Redis Replica, Sentinel
+  - Redis의 백업(RDB, AOF)
+  - Redis의 트래픽 분산, HA (replica, sentinel)
+- RedisCluster
+  - Redis Cluster
+  - Redis의 트래픽/데이터 분산, HA (Cluster)
+- RedisStreams
+  - Redis Streams
+  - Redis의 Event Broker (Event-Driven Architecture)
+  - 주문, 결제, 알림 서비스 (MSA)
   
 ## Dependency
 - Java 17
