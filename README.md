@@ -28,6 +28,7 @@ Redis study with Java, Spring boot
   - Redis Streams
   - Redis의 Event Broker (Event-Driven Architecture)
   - 주문, 결제, 알림 서비스 (MSA)
+  - Subscription, StreamListener 사용
   
 ## Dependency
 - Java 17
