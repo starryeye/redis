@@ -82,6 +82,9 @@ public class InventoryService {
 
             setStock(productId, stock - amount);
 
+            log.info("{} success reduce stock.. productId={}, previous amount={}, after amount={}",
+                    currentThread.getName(), productId, stock, stock - amount);
+
         } catch (InterruptedException e) {
             log.error("{} failed to acquire lock due to interruption.. productId={}, need amount={}",
                     currentThread.getName(), productId, amount, e);
