@@ -55,6 +55,17 @@ public class InventoryServiceWithoutLock {
                 currentThread.getName(), productId, stock, stock + amount);
     }
 
+    public void initStock(String productId) {
+        Thread currentThread = Thread.currentThread();
+
+        int stock = getCurrentStock(productId);
+
+        setStock(productId, 0);
+
+        log.info("{} success init stock.. productId={}, previous amount={}, after amount={}",
+                currentThread.getName(), productId, stock, 0);
+    }
+
     public int getCurrentStock(String key) {
         String value = valueOperations.get(key);
         return value == null ? 0 : Integer.parseInt(value);
