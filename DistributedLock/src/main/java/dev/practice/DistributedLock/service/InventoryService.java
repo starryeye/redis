@@ -74,7 +74,7 @@ public class InventoryService {
             //락 점유
             int stock = getCurrentStock(productId);
 
-            if (stock - amount <= STOCK_EMPTY) {
+            if (stock - amount < STOCK_EMPTY) {
                 log.info("{} not enough stock.. productId={}, current amount={}, need amount={}",
                         currentThread.getName(), productId, stock, amount);
                 return;
