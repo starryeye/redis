@@ -29,8 +29,11 @@ public class InventoryServiceWithoutLock {
                     currentThread.getName(), productId, stock, amount);
             return;
         }
-        
+
         setStock(productId, stock - amount);
+
+        log.info("{} success reduce stock.. productId={}, previous amount={}, after amount={}",
+                currentThread.getName(), productId, stock, stock - amount);
     }
 
     private int getCurrentStock(String key) {
