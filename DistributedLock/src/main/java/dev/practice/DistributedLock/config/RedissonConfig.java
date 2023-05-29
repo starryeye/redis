@@ -17,7 +17,7 @@ public class RedissonConfig {
     private final RedisProperty redisProperty;
 
     /**
-     * Spring Data Redis 는 Redis Client 로 Lettuce, Jedis 를 사용한다.
+     * Spring Data Redis 는 Redis Client 로 Lettuce(Default), Jedis 를 사용한다.
      * 이를 통해 자동으로 RedisTemplate 이 구성되는데..
      * Redisson 은 Spring Data 프로젝트에 속하지 않는다.
      * 따라서, 따로 Client 를 구성하고 직접 사용해야 한다.
