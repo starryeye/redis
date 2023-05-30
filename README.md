@@ -29,15 +29,16 @@ Redis study with Java, Spring boot
   - Redis의 Event Broker (Event-Driven Architecture)
   - 주문, 결제, 알림 서비스 (MSA)
   - Subscription, StreamListener 사용
-- DistributedLock (예정)
+- DistributedLock
   - Redis Distributed Lock
-  - Redis Client Redisson 사용하여 race condition 해결
+  - Redis Client Redisson 의 분산 락을 사용하여 race condition 해결
   
 ## Dependency
 - Java 17
 - Spring Boot 3.X
 - Spring Web
 - Spring Data Redis
+- redisson-spring-boot-starter 3.X
 - Validation
 - Springdoc-openApi
 - lombok
