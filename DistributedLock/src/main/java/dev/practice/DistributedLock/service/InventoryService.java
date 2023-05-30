@@ -103,7 +103,7 @@ public class InventoryService {
      * set() 을 하면 데이터를 수정할 수 있다.
      */
     private int getCurrentStock(String key) {
-        return (int) redissonClient.getBucket(key).get();
+        return redissonClient.<Integer>getBucket(key).get();
     }
 
     private void setStock(String key, int value) {

@@ -25,7 +25,7 @@ class InventoryServiceTest {
     @Autowired
     private InventoryServiceWithoutLock inventoryServiceWithoutLock;
 
-    private String productId = "item";
+    private final String productId = "item";
 
     @BeforeEach
     void init() {
@@ -66,6 +66,29 @@ class InventoryServiceTest {
         Assertions.assertThat(resultStock).isGreaterThan(0); //Race Condition 문제 발생!
     }
 
+    @Test
+    void reduceStockTestWithLock() throws InterruptedException {
+        //given
+        int workerCount = 100;
+        int amount = 2;
+        CountDownLatch countDownLatch = new CountDownLatch(workerCount);
+        ExecutorService executorService = Executors.newFixedThreadPool(workerCount);
+
+        //when
+        List<workerWithLock> workerList = Stream.generate(() -> new workerWithLock(inventoryService, productId, amount, countDownLatch))
+                .limit(workerCount)
+                .toList();
+
+        workerList.forEach(executorService::execute);
+
+        countDownLatch.await();
+        executorService.shutdown();
+
+        //then
+        int resultStock = inventoryServiceWithoutLock.getCurrentStock(productId);
+        Assertions.assertThat(resultStock).isEqualTo(0);
+    }
+
     private static class workerWithoutLock implements Runnable {
 
         private final InventoryServiceWithoutLock inventoryServiceWithoutLock;
@@ -83,6 +106,27 @@ class InventoryServiceTest {
         @Override
         public void run() {
             inventoryServiceWithoutLock.reduceStock(productId, amount);
+            countDownLatch.countDown();
+        }
+    }
+
+    private static class workerWithLock implements Runnable {
+
+        private final InventoryService inventoryService;
+        private final String productId;
+        private final int amount;
+        private final CountDownLatch countDownLatch;
+
+        public workerWithLock(InventoryService inventoryService, String productId, int amount, CountDownLatch countDownLatch) {
+            this.inventoryService = inventoryService;
+            this.productId = productId;
+            this.amount = amount;
+            this.countDownLatch = countDownLatch;
+        }
+
+        @Override
+        public void run() {
+            inventoryService.reduceStock(productId, amount);
             countDownLatch.countDown();
         }
     }
