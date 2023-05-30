@@ -29,9 +29,6 @@ import java.util.concurrent.TimeUnit;
  * 락이 해제 되면 발생하는 이벤트를 다른 클라이언트가 구독할 수 있도록 한다.
  * Pub/Sub 모델 활용 시, 락 상태 확인을 위해 Redis 에 지속적으로 요청을 보내는 부하를 줄일 수 있게 된다.
  * 해당 과정은 알아서 진행 되므로, 개발자는 lock, tryLock 만 쓰면 된다.
- *
- *
- * fair, 전략 설정..
  */
 @Slf4j
 @Service
