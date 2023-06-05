@@ -32,6 +32,9 @@ Redis study with Java, Spring boot
 - DistributedLock
   - Redis Distributed Lock
   - Redis Client Redisson 의 분산 락을 사용하여 race condition 해결
+- IssueTracking
+  - lettuce Client 와 redisson Client 를 동시에 사용할 경우 Serializer(Codec) 을 동일하게 맞춰야한다.
+  - 처음에는 잘 몰라서.. 이슈인것 같아서.. 문의해버렸다.. ㅠㅠ [redisson 이슈 링크](https://github.com/redisson/redisson/issues/5072)
   
 ## Dependency
 - Java 17
