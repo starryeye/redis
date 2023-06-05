@@ -34,7 +34,9 @@ Redis study with Java, Spring boot
   - Redis Client Redisson 의 분산 락을 사용하여 race condition 해결
 - IssueTracking
   - lettuce Client 와 redisson Client 를 동시에 사용할 경우 Serializer(Codec) 을 동일하게 맞춰야한다.
-  - 처음에는 잘 몰라서.. 이슈인것 같아서.. 문의해버렸다.. ㅠㅠ [redisson 이슈 링크](https://github.com/redisson/redisson/issues/5072)
+  - 처음에는 잘 몰라서.. 둘다 기본 Codec 을 사용했고.. 에러가 났다..
+  - lettuce : StringCodec(default), redisson : Kryo5Codec(default)
+  - 이슈인것 같아서.. 문의해버렸다.. ㅠㅠ [redisson 이슈 링크](https://github.com/redisson/redisson/issues/5072)
   
 ## Dependency
 - Java 17
