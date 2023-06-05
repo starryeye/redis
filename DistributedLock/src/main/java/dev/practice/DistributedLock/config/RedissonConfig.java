@@ -4,6 +4,7 @@ import dev.practice.DistributedLock.common.RedisProperty;
 import lombok.RequiredArgsConstructor;
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
+import org.redisson.client.codec.StringCodec;
 import org.redisson.codec.JsonJacksonCodec;
 import org.redisson.config.Config;
 import org.springframework.context.annotation.Bean;
@@ -37,9 +38,11 @@ public class RedissonConfig {
         config.useSingleServer() //redis 배포 형태 설정
                 .setAddress(String.format(SERVER_URL, redisProperty.getHost(), redisProperty.getPort())); // redis address
 
-        //Kryo Codec 에 문제가 있어서 redisson 분산 락 Test 가 제대로 동작 하지 않아서 Codec 을 바꾸었다.
-        //직렬화/역직렬화 관련..
-        config.setCodec(new JsonJacksonCodec());
+        /**
+         * lettuce 의 기본 코덱은 StringCodec 이다.
+         * redisson 의 코덱을 StringCodec 으로 맞춰서 상호 호환이 되도록 한다.
+         */
+        config.setCodec(new StringCodec());
 
         return Redisson.create(config);
     }
