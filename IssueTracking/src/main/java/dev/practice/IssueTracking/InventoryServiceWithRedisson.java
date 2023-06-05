@@ -11,10 +11,10 @@ public class InventoryServiceWithRedisson {
     private final RedissonClient redissonClient;
 
     public int getCurrentStock(String key) {
-        return redissonClient.<Integer>getBucket(key).get();
+        return Integer.parseInt(redissonClient.<String>getBucket(key).get());
     }
 
     public void setCurrentStock(String key, int value) {
-        redissonClient.getBucket(key).set(value);
+        redissonClient.getBucket(key).set(String.valueOf(value));
     }
 }
