@@ -37,6 +37,8 @@ Redis study with Java, Spring boot
   - 처음에는 잘 몰라서 둘다 기본 Codec 을 사용했고 에러가 났다..
   - 그래서.. 이슈인것 같아서.. 문의해버렸다.. ㅠㅠ [redisson 이슈 링크](https://github.com/redisson/redisson/issues/5072)
   - lettuce : StringCodec(default), redisson : Kryo5Codec(default)
+- Architecture
+  - Spring Data Redis, CrudRepository 사용법
   
 ## Dependency
 - Java 17
