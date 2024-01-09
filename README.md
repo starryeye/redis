@@ -38,6 +38,10 @@ Redis study with Java, Spring boot
   - lettuce : StringCodec(default), redisson : Kryo5Codec(default)
 - Architecture
   - Spring Data Redis, CrudRepository 사용법
+
+- 다른 리포지토리
+  - [spring-webflux](https://github.com/starryeye/spring-webflux)
+    - Spring Data Redis reactive
   
 ## Dependency
 - Java 17
