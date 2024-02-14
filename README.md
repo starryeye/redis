@@ -53,3 +53,5 @@ Redis study with Java, Spring boot
 - Springdoc-openApi
 - lombok
 - Spring Boot Test
+
+## Posting
