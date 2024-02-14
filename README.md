@@ -55,3 +55,8 @@ Redis study with Java, Spring boot
 - Spring Boot Test
 
 ## Posting
+- [Redis 시작해보기](https://starryeye.tistory.com/161)
+- [Redis Data Type 1](https://starryeye.tistory.com/162)
+- [Redis Data Type 2](https://starryeye.tistory.com/163)
+- [Redis Data Type 3](https://starryeye.tistory.com/164)
+- [Redis Core, I/O, Transaction, Lock](https://starryeye.tistory.com/167)
