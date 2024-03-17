@@ -37,7 +37,8 @@ Redis study with Java, Spring boot
     - [redisson 문의](https://github.com/redisson/redisson/issues/5072)
   - lettuce : StringCodec(default), redisson : Kryo5Codec(default)
 - Architecture
-  - Spring Data Redis, CrudRepository 사용법
+  - Spring Data Redis
+  - Redis Repository(CrudRepository) 사용법
 
 - 다른 리포지토리
   - [spring-webflux](https://github.com/starryeye/spring-webflux)
